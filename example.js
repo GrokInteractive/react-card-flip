@@ -1,8 +1,5 @@
+require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-	value: true
-});
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -18,108 +15,92 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var ReactCardFlip = (function (_React$Component) {
-	_inherits(ReactCardFlip, _React$Component);
+var _reactDom = require('react-dom');
 
-	function ReactCardFlip(props) {
-		_classCallCheck(this, ReactCardFlip);
+var _reactDom2 = _interopRequireDefault(_reactDom);
 
-		_get(Object.getPrototypeOf(ReactCardFlip.prototype), 'constructor', this).call(this, props);
+var _reactCardFlip = require('react-card-flip');
+
+var _reactCardFlip2 = _interopRequireDefault(_reactCardFlip);
+
+var App = (function (_React$Component) {
+	_inherits(App, _React$Component);
+
+	function App() {
+		_classCallCheck(this, App);
+
+		_get(Object.getPrototypeOf(App.prototype), 'constructor', this).call(this);
 		this.state = {
-			isFlipped: this.props.isFlipped
+			isFlipped: false
 		};
+		this.handleClick = this.handleClick.bind(this);
 	}
 
-	_createClass(ReactCardFlip, [{
-		key: 'componentWillReceiveProps',
-		value: function componentWillReceiveProps(nextProps) {
-			if (nextProps.isFlipped !== this.props.isFlipped) {
-				this.setState({ isFlipped: nextProps.isFlipped });
-			}
-		}
-	}, {
-		key: 'getComponent',
-		value: function getComponent(key) {
-			return this.props.children.filter(function (component) {
-				return component.key === key;
-			});
+	_createClass(App, [{
+		key: 'handleClick',
+		value: function handleClick(event) {
+			event.preventDefault();
+			this.setState({ isFlipped: !this.state.isFlipped });
 		}
 	}, {
 		key: 'render',
 		value: function render() {
 			var styles = {
-				container: {
-					perspective: '1000px'
+				example: {
+					height: '75vh',
+					width: '250px'
 				},
-				flipper: {
-					position: 'relative',
-					transformStyle: 'preserve-3d',
-					transition: '0.6s'
+				card: {
+					border: '1px solid #eeeeee',
+					borderRadius: '3px',
+					padding: '15px',
+					width: '250px'
 				},
-				flipperFlip: {
-					position: 'relative',
-					transform: 'rotateY(180deg)',
-					transformStyle: 'preserve-3d',
-					transition: '0.6s'
-				},
-				front: {
-					backfaceVisibility: 'hidden',
-					left: '0',
-					position: 'absolute',
-					top: '0',
-					transform: 'rotateY(0deg)',
-					width: '100%',
-					zIndex: '2'
-				},
-				back: {
-					backfaceVisibility: 'hidden',
-					left: '0',
-					position: 'absolute',
-					transform: 'rotateY(180deg)',
-					top: '0',
-					width: '100%'
+				image: {
+					width: '250px'
 				}
 			};
 
 			return _react2['default'].createElement(
 				'div',
-				{ className: 'react-card-flip', style: styles.container },
+				{ style: styles.example },
 				_react2['default'].createElement(
-					'p',
-					null,
-					'Click the button to flip the card!'
-				),
-				_react2['default'].createElement(
-					'div',
-					{
-						className: 'react-card-flipper',
-						style: this.state.isFlipped ? styles.flipperFlip : styles.flipper },
+					_reactCardFlip2['default'],
+					{ isFlipped: this.state.isFlipped },
 					_react2['default'].createElement(
 						'div',
-						{ className: 'react-card-front', style: styles.front },
-						this.getComponent('front')
+						{ key: 'front', style: styles.card },
+						_react2['default'].createElement('img', {
+							style: styles.image,
+							src: '//www.petfinder.com/wp-content/uploads/2012/11/dog-how-to-select-your-new-best-friend-thinkstock99062463.jpg'
+						}),
+						_react2['default'].createElement(
+							'button',
+							{ onClick: this.handleClick },
+							'Flip Card'
+						)
 					),
 					_react2['default'].createElement(
 						'div',
-						{ className: 'react-card-back', style: styles.back },
-						this.getComponent('back')
+						{ key: 'back', style: styles.card },
+						_react2['default'].createElement('img', {
+							style: styles.image,
+							src: '//img.buzzfeed.com/buzzfeed-static/static/2014-04/enhanced/webdr06/4/16/enhanced-11136-1396643149-13.jpg?no-auto'
+						}),
+						_react2['default'].createElement(
+							'button',
+							{ onClick: this.handleClick },
+							'Flip Card'
+						)
 					)
 				)
 			);
 		}
 	}]);
 
-	return ReactCardFlip;
+	return App;
 })(_react2['default'].Component);
 
-ReactCardFlip.propTypes = {
-	children: function children(props, propName, componentName) {
-		if (_react2['default'].Children.count(props[propName]) !== 2) {
-			return new Error(componentName + ' requires two children.');
-		}
-	},
-	isFlipped: _react2['default'].PropTypes.bool
-};
+_reactDom2['default'].render(_react2['default'].createElement(App, null), document.getElementById('app'));
 
-exports['default'] = ReactCardFlip;
-module.exports = exports['default'];
+},{"react":undefined,"react-card-flip":undefined,"react-dom":undefined}]},{},[1]);
