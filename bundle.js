@@ -86,11 +86,6 @@ var ReactCardFlip = (function (_React$Component) {
 				'div',
 				{ className: 'react-card-flip', style: styles.container },
 				_react2['default'].createElement(
-					'p',
-					null,
-					'Click the button to flip the card!'
-				),
-				_react2['default'].createElement(
 					'div',
 					{
 						className: 'react-card-flipper',

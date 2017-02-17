@@ -65,6 +65,11 @@ var App = (function (_React$Component) {
 				'div',
 				{ style: styles.example },
 				_react2['default'].createElement(
+					'p',
+					null,
+					'Click the button to flip the card!'
+				),
+				_react2['default'].createElement(
 					_reactCardFlip2['default'],
 					{ isFlipped: this.state.isFlipped },
 					_react2['default'].createElement(
