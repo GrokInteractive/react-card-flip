@@ -94,7 +94,7 @@ Example.propTypes = {
 exports['default'] = Example;
 module.exports = exports['default'];
 
-},{"prop-types":11,"react":undefined,"react-card-flip":undefined}],2:[function(require,module,exports){
+},{"prop-types":12,"react":undefined,"react-card-flip":undefined}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -169,7 +169,7 @@ var FasterExample = (function (_Component) {
           { key: 'back', style: this.props.styles.card },
           _react2['default'].createElement('img', {
             style: this.props.styles.image,
-            src: '//tu9srvbirvvtmtykznrobwiudhfulmnvbq00.g00.thespruce.com/g00/2_d3d3LnRoZXNwcnVjZS5jb20%3D_/TU9SRVBIRVVTMTYkaHR0cHM6Ly9mdGhtYi50cW4uY29tL2hYUnV6ZDVmNjJUX2ZXZVBQdjdhVXNWaVp5RT0vOTYweDAvZmlsdGVyczpub191cHNjYWxlKCkvYWJvdXQvQ2F0LXJvbGxpbmctR2V0dHlJbWFnZXMtMTY1ODkzMTMyLTU4YWM1ZWYwNWY5YjU4YTNjOTBhMTQ0Zi5qcGc%2FaTEwYy5tYXJrLmltYWdlLnR5cGU%3D_$/$/$/$/$/$'
+            src: '//www.planwallpaper.com/static/images/dogs1_lm4Ye34.jpg'
           }),
           _react2['default'].createElement(
             'button',
@@ -193,7 +193,103 @@ FasterExample.propTypes = {
 exports['default'] = FasterExample;
 module.exports = exports['default'];
 
-},{"prop-types":11,"react":undefined,"react-card-flip":undefined}],3:[function(require,module,exports){
+},{"prop-types":12,"react":undefined,"react-card-flip":undefined}],3:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactCardFlip = require('react-card-flip');
+
+var _reactCardFlip2 = _interopRequireDefault(_reactCardFlip);
+
+var RevolvingExample = (function (_Component) {
+  _inherits(RevolvingExample, _Component);
+
+  function RevolvingExample() {
+    _classCallCheck(this, RevolvingExample);
+
+    _get(Object.getPrototypeOf(RevolvingExample.prototype), 'constructor', this).call(this);
+    this.state = {
+      isFlipped: false
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  _createClass(RevolvingExample, [{
+    key: 'handleClick',
+    value: function handleClick(event) {
+      event.preventDefault();
+      this.setState({ isFlipped: !this.state.isFlipped });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2['default'].createElement(
+        _reactCardFlip2['default'],
+        { isFlipped: this.state.isFlipped, infinite: true },
+        _react2['default'].createElement(
+          'div',
+          { key: 'front', style: this.props.styles.card },
+          _react2['default'].createElement('img', {
+            style: this.props.styles.image,
+            src: '//www.planwallpaper.com/static/images/02_GpKGIi8.jpg'
+          }),
+          _react2['default'].createElement(
+            'button',
+            { onClick: this.handleClick },
+            'Flip Card'
+          )
+        ),
+        _react2['default'].createElement(
+          'div',
+          { key: 'back', style: this.props.styles.card },
+          _react2['default'].createElement('img', {
+            style: this.props.styles.image,
+            src: '//www.planwallpaper.com/static/images/147083304-dogs-home-alone-all-day-632x475_TeDlBdS.jpg'
+          }),
+          _react2['default'].createElement(
+            'button',
+            { onClick: this.handleClick },
+            'Flip Card'
+          )
+        )
+      );
+    }
+  }]);
+
+  return RevolvingExample;
+})(_react.Component);
+
+;
+
+RevolvingExample.propTypes = {
+  styles: _propTypes2['default'].object
+};
+
+exports['default'] = RevolvingExample;
+module.exports = exports['default'];
+
+},{"prop-types":12,"react":undefined,"react-card-flip":undefined}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -268,7 +364,7 @@ var SlowerExample = (function (_Component) {
           { key: 'back', style: this.props.styles.card },
           _react2['default'].createElement('img', {
             style: this.props.styles.image,
-            src: '//tu9srvbirvvtmtykznrobwiudhfulmnvbq00.g00.thespruce.com/g00/2_d3d3LnRoZXNwcnVjZS5jb20%3D_/TU9SRVBIRVVTMTYkaHR0cHM6Ly9mdGhtYi50cW4uY29tL3ZacFFVMTFyS3NEUkZjLUR6TkMtbHdNTUpGaz0vOTYweDAvZmlsdGVyczpub191cHNjYWxlKCkvYWJvdXQvQ2F0LWVhdGluZy1ncmFzcy1HZXR0eUltYWdlcy01MzM1MDczODEtNThhYzYwYWUzZGY3OGMzNDViNDEzOTUzLmpwZz9pMTBjLm1hcmsuaW1hZ2UudHlwZQ%3D%3D_$/$/$/$/$/$'
+            src: '//www.planwallpaper.com/static/images/Beagle-Wallpaper-dogs-7013951-1024-768.jpg'
           }),
           _react2['default'].createElement(
             'button',
@@ -292,7 +388,7 @@ SlowerExample.propTypes = {
 exports['default'] = SlowerExample;
 module.exports = exports['default'];
 
-},{"prop-types":11,"react":undefined,"react-card-flip":undefined}],4:[function(require,module,exports){
+},{"prop-types":12,"react":undefined,"react-card-flip":undefined}],5:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -316,6 +412,10 @@ var _SlowerExampleJsx2 = _interopRequireDefault(_SlowerExampleJsx);
 var _FasterExampleJsx = require('./FasterExample.jsx');
 
 var _FasterExampleJsx2 = _interopRequireDefault(_FasterExampleJsx);
+
+var _RevolvingExampleJsx = require('./RevolvingExample.jsx');
+
+var _RevolvingExampleJsx2 = _interopRequireDefault(_RevolvingExampleJsx);
 
 var App = function App() {
 	var styles = {
@@ -368,13 +468,23 @@ var App = function App() {
 				'Faster card flip'
 			),
 			_react2['default'].createElement(_FasterExampleJsx2['default'], { styles: styles })
+		),
+		_react2['default'].createElement(
+			'section',
+			{ className: 'example-section' },
+			_react2['default'].createElement(
+				'h3',
+				null,
+				'Revolving door card flip'
+			),
+			_react2['default'].createElement(_RevolvingExampleJsx2['default'], { styles: styles })
 		)
 	);
 };
 
 _reactDom2['default'].render(_react2['default'].createElement(App, null), document.getElementById('app'));
 
-},{"./Example.jsx":1,"./FasterExample.jsx":2,"./SlowerExample.jsx":3,"react":undefined,"react-dom":undefined}],5:[function(require,module,exports){
+},{"./Example.jsx":1,"./FasterExample.jsx":2,"./RevolvingExample.jsx":3,"./SlowerExample.jsx":4,"react":undefined,"react-dom":undefined}],6:[function(require,module,exports){
 "use strict";
 
 /**
@@ -413,7 +523,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -469,7 +579,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -536,7 +646,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = warning;
-},{"./emptyFunction":5}],8:[function(require,module,exports){
+},{"./emptyFunction":6}],9:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -599,7 +709,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 
 module.exports = checkPropTypes;
 
-},{"./lib/ReactPropTypesSecret":12,"fbjs/lib/invariant":6,"fbjs/lib/warning":7}],9:[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":13,"fbjs/lib/invariant":7,"fbjs/lib/warning":8}],10:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -660,7 +770,7 @@ module.exports = function() {
   return ReactPropTypes;
 };
 
-},{"./lib/ReactPropTypesSecret":12,"fbjs/lib/emptyFunction":5,"fbjs/lib/invariant":6}],10:[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":13,"fbjs/lib/emptyFunction":6,"fbjs/lib/invariant":7}],11:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1174,7 +1284,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   return ReactPropTypes;
 };
 
-},{"./checkPropTypes":8,"./lib/ReactPropTypesSecret":12,"fbjs/lib/emptyFunction":5,"fbjs/lib/invariant":6,"fbjs/lib/warning":7}],11:[function(require,module,exports){
+},{"./checkPropTypes":9,"./lib/ReactPropTypesSecret":13,"fbjs/lib/emptyFunction":6,"fbjs/lib/invariant":7,"fbjs/lib/warning":8}],12:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1206,7 +1316,7 @@ if ("production" !== 'production') {
   module.exports = require('./factoryWithThrowingShims')();
 }
 
-},{"./factoryWithThrowingShims":9,"./factoryWithTypeCheckers":10}],12:[function(require,module,exports){
+},{"./factoryWithThrowingShims":10,"./factoryWithTypeCheckers":11}],13:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1222,4 +1332,4 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}]},{},[4]);
+},{}]},{},[5]);
